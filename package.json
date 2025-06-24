@@ -1,15 +1,14 @@
+
 {
   "name": "supply-chain-quiz",
   "version": "1.0.0",
-"scripts": {
-  "start": "parcel index.html",
-  "build": "parcel build index.html"
-}
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "description": "Interactive supply chain maturity assessment",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "devDependencies": {
-    "parcel": "^2.15.4"
+    "parcel": "^2.10.0"
   }
 }
