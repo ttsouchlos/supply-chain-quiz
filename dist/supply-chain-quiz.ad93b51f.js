@@ -16283,11 +16283,20 @@ function SupplyChainAssessment() {
         const start = index * 6;
         const end = start + 6;
         const score = responses.slice(start, end).reduce((a, b)=>a + b, 0);
+        // Calculate the scaled score (1-5)
+        // If score is 6 (all 1s), scaledScore = 1
+        // If score is 30 (all 5s), scaledScore = 5
+        const scaledScore = score / 6;
+        // Apply your specific scaling logic for the slider percentage
+        // This maps the scaledScore (1-5) to a percentage on your slider image.
+        // 1 maps to 1%, 5 maps to 49%
+        const sliderPercent = 2.5 + (scaledScore - 1) * 11;
         return {
             section: section.section,
             score,
             feedback: score > 12 ? guidanceText[section.section].low : guidanceText[section.section].high,
-            sliderPosition: (score / 6).toFixed(1)
+            sliderPosition: scaledScore.toFixed(1),
+            sliderPercent: sliderPercent // This is the value used for the arrow positioning
         };
     });
     if (submitted) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -16301,7 +16310,7 @@ function SupplyChainAssessment() {
                 children: "Assessment Results"
             }, void 0, false, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 144,
+                lineNumber: 156,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -16310,7 +16319,7 @@ function SupplyChainAssessment() {
                         children: "Total Score:"
                     }, void 0, false, {
                         fileName: "src/SupplyChainAssessment.js",
-                        lineNumber: 145,
+                        lineNumber: 157,
                         columnNumber: 12
                     }, this),
                     " ",
@@ -16318,7 +16327,7 @@ function SupplyChainAssessment() {
                 ]
             }, void 0, true, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 145,
+                lineNumber: 157,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -16327,7 +16336,7 @@ function SupplyChainAssessment() {
                         children: "Overall Maturity Level:"
                     }, void 0, false, {
                         fileName: "src/SupplyChainAssessment.js",
-                        lineNumber: 146,
+                        lineNumber: 158,
                         columnNumber: 12
                     }, this),
                     " ",
@@ -16335,7 +16344,7 @@ function SupplyChainAssessment() {
                 ]
             }, void 0, true, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 146,
+                lineNumber: 158,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -16347,19 +16356,19 @@ function SupplyChainAssessment() {
                 }
             }, void 0, false, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 147,
+                lineNumber: 159,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 148,
+                lineNumber: 160,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: "Section Feedback:"
             }, void 0, false, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 149,
+                lineNumber: 161,
                 columnNumber: 9
             }, this),
             sectionScores.map((s, idx)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -16371,8 +16380,8 @@ function SupplyChainAssessment() {
                             children: s.section
                         }, void 0, false, {
                             fileName: "src/SupplyChainAssessment.js",
-                            lineNumber: 152,
-                            columnNumber: 13
+                            lineNumber: 164,
+                            columnNumber: 6
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: [
@@ -16380,8 +16389,8 @@ function SupplyChainAssessment() {
                                     children: "Score:"
                                 }, void 0, false, {
                                     fileName: "src/SupplyChainAssessment.js",
-                                    lineNumber: 153,
-                                    columnNumber: 16
+                                    lineNumber: 165,
+                                    columnNumber: 9
                                 }, this),
                                 " ",
                                 s.score,
@@ -16389,8 +16398,8 @@ function SupplyChainAssessment() {
                             ]
                         }, void 0, true, {
                             fileName: "src/SupplyChainAssessment.js",
-                            lineNumber: 153,
-                            columnNumber: 13
+                            lineNumber: 165,
+                            columnNumber: 6
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                             src: new URL(require("606870804b89205d")).href,
@@ -16401,21 +16410,49 @@ function SupplyChainAssessment() {
                             }
                         }, void 0, false, {
                             fileName: "src/SupplyChainAssessment.js",
-                            lineNumber: 154,
-                            columnNumber: 13
+                            lineNumber: 166,
+                            columnNumber: 6
                         }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            style: {
+                                position: "relative",
+                                width: "100%",
+                                height: "20px" // Added a height to contain the absolute positioned arrow
+                            },
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                style: {
+                                    position: "absolute",
+                                    top: "-75px",
+                                    left: `calc(${s.sliderPercent}% - 10px)`,
+                                    width: 0,
+                                    height: 0,
+                                    borderLeft: "10px solid transparent",
+                                    borderRight: "10px solid transparent",
+                                    borderTop: "10px solid black"
+                                }
+                            }, void 0, false, {
+                                fileName: "src/SupplyChainAssessment.js",
+                                lineNumber: 174,
+                                columnNumber: 8
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/SupplyChainAssessment.js",
+                            lineNumber: 167,
+                            columnNumber: 6
+                        }, this),
+                        " ",
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: s.feedback
                         }, void 0, false, {
                             fileName: "src/SupplyChainAssessment.js",
-                            lineNumber: 155,
-                            columnNumber: 13
+                            lineNumber: 187,
+                            columnNumber: 6
                         }, this)
                     ]
                 }, idx, true, {
                     fileName: "src/SupplyChainAssessment.js",
-                    lineNumber: 151,
-                    columnNumber: 11
+                    lineNumber: 163,
+                    columnNumber: 4
                 }, this)),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 style: {
@@ -16430,21 +16467,21 @@ function SupplyChainAssessment() {
                                 children: "SRx Consulting Supply Chain assessment"
                             }, void 0, false, {
                                 fileName: "src/SupplyChainAssessment.js",
-                                lineNumber: 160,
+                                lineNumber: 192,
                                 columnNumber: 24
                             }, this),
                             " provided valuable insights into your current operations. This tool is designed to help you reflect on key performance drivers while identifying specific opportunities that could significantly impact your bottom line."
                         ]
                     }, void 0, true, {
                         fileName: "src/SupplyChainAssessment.js",
-                        lineNumber: 159,
+                        lineNumber: 191,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "If any of the findings resonated with you or if you'd like to explore potential solutions in greater detail, I'd welcome the opportunity to discuss your results further. Please feel free to schedule a follow-up conversation at your convenience."
                     }, void 0, false, {
                         fileName: "src/SupplyChainAssessment.js",
-                        lineNumber: 162,
+                        lineNumber: 194,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -16454,16 +16491,16 @@ function SupplyChainAssessment() {
                                 href: "https://www.SRxConsultingllc.com",
                                 target: "_blank",
                                 rel: "noopener noreferrer",
-                                children: "Visit our website"
+                                children: "Visit my website"
                             }, void 0, false, {
                                 fileName: "src/SupplyChainAssessment.js",
-                                lineNumber: 166,
+                                lineNumber: 198,
                                 columnNumber: 16
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                 fileName: "src/SupplyChainAssessment.js",
-                                lineNumber: 166,
-                                columnNumber: 122
+                                lineNumber: 198,
+                                columnNumber: 121
                             }, this),
                             "\uD83D\uDCC5 ",
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -16473,25 +16510,25 @@ function SupplyChainAssessment() {
                                 children: "Schedule a 30-minute meeting"
                             }, void 0, false, {
                                 fileName: "src/SupplyChainAssessment.js",
-                                lineNumber: 167,
+                                lineNumber: 199,
                                 columnNumber: 16
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/SupplyChainAssessment.js",
-                        lineNumber: 165,
+                        lineNumber: 197,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 158,
+                lineNumber: 190,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/SupplyChainAssessment.js",
-        lineNumber: 143,
+        lineNumber: 155,
         columnNumber: 7
     }, this);
     if (currentSection === -1) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -16505,7 +16542,7 @@ function SupplyChainAssessment() {
                 children: "Supply Chain Maturity Assessment"
             }, void 0, false, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 177,
+                lineNumber: 209,
                 columnNumber: 9
             }, this),
             Object.keys(userInfo).map((field, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -16524,13 +16561,13 @@ function SupplyChainAssessment() {
                                     children: "*"
                                 }, void 0, false, {
                                     fileName: "src/SupplyChainAssessment.js",
-                                    lineNumber: 181,
+                                    lineNumber: 213,
                                     columnNumber: 64
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/SupplyChainAssessment.js",
-                            lineNumber: 180,
+                            lineNumber: 212,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -16545,13 +16582,13 @@ function SupplyChainAssessment() {
                             }
                         }, void 0, false, {
                             fileName: "src/SupplyChainAssessment.js",
-                            lineNumber: 183,
+                            lineNumber: 215,
                             columnNumber: 13
                         }, this)
                     ]
                 }, i, true, {
                     fileName: "src/SupplyChainAssessment.js",
-                    lineNumber: 179,
+                    lineNumber: 211,
                     columnNumber: 11
                 }, this)),
             error && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -16561,7 +16598,7 @@ function SupplyChainAssessment() {
                 children: error
             }, void 0, false, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 193,
+                lineNumber: 225,
                 columnNumber: 19
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -16580,13 +16617,13 @@ function SupplyChainAssessment() {
                 children: "Next"
             }, void 0, false, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 194,
+                lineNumber: 226,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/SupplyChainAssessment.js",
-        lineNumber: 176,
+        lineNumber: 208,
         columnNumber: 7
     }, this);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -16607,14 +16644,14 @@ function SupplyChainAssessment() {
                                 children: "Instructions:"
                             }, void 0, false, {
                                 fileName: "src/SupplyChainAssessment.js",
-                                lineNumber: 213,
+                                lineNumber: 245,
                                 columnNumber: 12
                             }, this),
                             " For each statement below, please move the slider to indicate your level of agreement:"
                         ]
                     }, void 0, true, {
                         fileName: "src/SupplyChainAssessment.js",
-                        lineNumber: 213,
+                        lineNumber: 245,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
@@ -16623,54 +16660,54 @@ function SupplyChainAssessment() {
                                 children: "1 = Strongly Agree"
                             }, void 0, false, {
                                 fileName: "src/SupplyChainAssessment.js",
-                                lineNumber: 215,
+                                lineNumber: 247,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: "2 = Somewhat Agree"
                             }, void 0, false, {
                                 fileName: "src/SupplyChainAssessment.js",
-                                lineNumber: 216,
+                                lineNumber: 248,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: "3 = Neutral"
                             }, void 0, false, {
                                 fileName: "src/SupplyChainAssessment.js",
-                                lineNumber: 217,
+                                lineNumber: 249,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: "4 = Somewhat Disagree"
                             }, void 0, false, {
                                 fileName: "src/SupplyChainAssessment.js",
-                                lineNumber: 218,
+                                lineNumber: 250,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: "5 = Strongly Disagree"
                             }, void 0, false, {
                                 fileName: "src/SupplyChainAssessment.js",
-                                lineNumber: 219,
+                                lineNumber: 251,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/SupplyChainAssessment.js",
-                        lineNumber: 214,
+                        lineNumber: 246,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 212,
+                lineNumber: 244,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: questions[currentSection].section
             }, void 0, false, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 222,
+                lineNumber: 254,
                 columnNumber: 7
             }, this),
             questions[currentSection].items.map((item, iIdx)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -16682,12 +16719,12 @@ function SupplyChainAssessment() {
                             children: item
                         }, void 0, false, {
                             fileName: "src/SupplyChainAssessment.js",
-                            lineNumber: 225,
+                            lineNumber: 257,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                             fileName: "src/SupplyChainAssessment.js",
-                            lineNumber: 225,
+                            lineNumber: 257,
                             columnNumber: 32
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -16698,7 +16735,7 @@ function SupplyChainAssessment() {
                             onChange: (e)=>handleSliderChange(currentSection * 6 + iIdx, e.target.value)
                         }, void 0, false, {
                             fileName: "src/SupplyChainAssessment.js",
-                            lineNumber: 226,
+                            lineNumber: 258,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -16708,13 +16745,13 @@ function SupplyChainAssessment() {
                             ]
                         }, void 0, true, {
                             fileName: "src/SupplyChainAssessment.js",
-                            lineNumber: 233,
+                            lineNumber: 265,
                             columnNumber: 11
                         }, this)
                     ]
                 }, iIdx, true, {
                     fileName: "src/SupplyChainAssessment.js",
-                    lineNumber: 224,
+                    lineNumber: 256,
                     columnNumber: 9
                 }, this)),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -16737,7 +16774,7 @@ function SupplyChainAssessment() {
                         children: "Back"
                     }, void 0, false, {
                         fileName: "src/SupplyChainAssessment.js",
-                        lineNumber: 238,
+                        lineNumber: 270,
                         columnNumber: 11
                     }, this),
                     currentSection < questions.length - 1 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -16753,7 +16790,7 @@ function SupplyChainAssessment() {
                         children: "Next"
                     }, void 0, false, {
                         fileName: "src/SupplyChainAssessment.js",
-                        lineNumber: 246,
+                        lineNumber: 278,
                         columnNumber: 11
                     }, this) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         onClick: handleSubmit,
@@ -16768,19 +16805,19 @@ function SupplyChainAssessment() {
                         children: "Submit Assessment"
                     }, void 0, false, {
                         fileName: "src/SupplyChainAssessment.js",
-                        lineNumber: 253,
+                        lineNumber: 285,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/SupplyChainAssessment.js",
-                lineNumber: 236,
+                lineNumber: 268,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/SupplyChainAssessment.js",
-        lineNumber: 211,
+        lineNumber: 243,
         columnNumber: 5
     }, this);
 }

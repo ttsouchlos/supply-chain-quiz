@@ -127,16 +127,28 @@ export default function SupplyChainAssessment() {
   else if (totalScore <= 120) overallTachometer = new URL("./overall-tachometer3.png", import.meta.url).href;
 
   const sectionScores = questions.map((section, index) => {
-    const start = index * 6;
-    const end = start + 6;
-    const score = responses.slice(start, end).reduce((a, b) => a + b, 0);
-    return {
-      section: section.section,
-      score,
-      feedback: score > 12 ? guidanceText[section.section].low : guidanceText[section.section].high,
-      sliderPosition: (score / 6).toFixed(1)
-    };
-  });
+  const start = index * 6;
+  const end = start + 6;
+  const score = responses.slice(start, end).reduce((a, b) => a + b, 0);
+
+  // Calculate the scaled score (1-5)
+  // If score is 6 (all 1s), scaledScore = 1
+  // If score is 30 (all 5s), scaledScore = 5
+  const scaledScore = score / 6;
+
+  // Apply your specific scaling logic for the slider percentage
+  // This maps the scaledScore (1-5) to a percentage on your slider image.
+  // 1 maps to 1%, 5 maps to 49%
+  const sliderPercent =2.5 + ((scaledScore - 1) * 11);
+
+  return {
+    section: section.section,
+    score,
+    feedback: score > 12 ? guidanceText[section.section].low : guidanceText[section.section].high,
+    sliderPosition: scaledScore.toFixed(1),
+    sliderPercent: sliderPercent // This is the value used for the arrow positioning
+  };
+});
 
   if (submitted) {
     return (
@@ -147,14 +159,34 @@ export default function SupplyChainAssessment() {
         <img src={overallTachometer} alt="Overall Score Tachometer" style={{ width: "100%", maxWidth: 500 }} />
         <hr />
         <h3>Section Feedback:</h3>
-        {sectionScores.map((s, idx) => (
-          <div key={idx} style={{ marginBottom: 30 }}>
-            <h4>{s.section}</h4>
-            <p><strong>Score:</strong> {s.score} / 30</p>
-            <img src={new URL("./maturity-slider.png", import.meta.url).href} alt="Maturity Slider" style={{ width: "100%", maxWidth: 400 }} />
-            <p>{s.feedback}</p>
-          </div>
-        ))}
+     {sectionScores.map((s, idx) => (
+   <div key={idx} style={{ marginBottom: 30 }}>
+     <h4>{s.section}</h4>
+     <p><strong>Score:</strong> {s.score} / 30</p>
+     <img src={new URL("./maturity-slider.png", import.meta.url).href} alt="Maturity Slider" style={{ width: "100%", maxWidth: 400 }} />
+     <div
+       style={{
+         position: "relative", // Changed from "absolute" for better positioning within its parent
+         width: "100%",
+         height: "20px" // Added a height to contain the absolute positioned arrow
+       }}
+     >
+       <div
+         style={{
+           position: "absolute",
+           top: "-75px",
+           left: `calc(${s.sliderPercent}% - 10px)`, // Assuming s.sliderPercent is defined elsewhere
+           width: 0,
+           height: 0,
+           borderLeft: "10px solid transparent",
+           borderRight: "10px solid transparent",
+           borderTop: "10px solid black"
+         }}
+       />
+     </div> {/* This div was prematurely closed */}
+     <p>{s.feedback}</p>
+   </div>
+ ))}  
         <div style={{ marginTop: 40, fontSize: "1.2em" }}>
           <p>
             I hope the <strong>SRx Consulting Supply Chain assessment</strong> provided valuable insights into your current operations. This tool is designed to help you reflect on key performance drivers while identifying specific opportunities that could significantly impact your bottom line.
