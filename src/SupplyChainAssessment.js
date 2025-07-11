@@ -1,4 +1,21 @@
 import React, { useState } from "react";
+import {
+  Container,
+  VStack,
+  HStack,
+  Box,
+  Text,
+  Heading,
+  SimpleGrid,
+  Button,
+  Link,
+  Divider,
+  Input,
+  FormControl,
+  FormLabel,
+  Alert,
+  AlertIcon
+} from '@chakra-ui/react';
 
 const questions = [
   {
@@ -127,118 +144,251 @@ export default function SupplyChainAssessment() {
   else if (totalScore <= 120) overallTachometer = new URL("./overall-tachometer3.png", import.meta.url).href;
 
   const sectionScores = questions.map((section, index) => {
-  const start = index * 6;
-  const end = start + 6;
-  const score = responses.slice(start, end).reduce((a, b) => a + b, 0);
+    const start = index * 6;
+    const end = start + 6;
+    const score = responses.slice(start, end).reduce((a, b) => a + b, 0);
 
-  // Calculate the scaled score (1-5)
-  // If score is 6 (all 1s), scaledScore = 1
-  // If score is 30 (all 5s), scaledScore = 5
-  const scaledScore = score / 6;
+    const scaledScore = score / 6;
+    const sliderPercent = 3.5 + ((scaledScore - 1) * 16);
 
-  // Apply your specific scaling logic for the slider percentage
-  // This maps the scaledScore (1-5) to a percentage on your slider image.
-  // 1 maps to 1%, 5 maps to 49%
-  const sliderPercent =2.5 + ((scaledScore - 1) * 11);
+    return {
+      section: section.section,
+      score,
+      feedback: score > 12 ? guidanceText[section.section].low : guidanceText[section.section].high,
+      sliderPosition: scaledScore.toFixed(1),
+      sliderPercent: sliderPercent
+    };
+  });
 
-  return {
-    section: section.section,
-    score,
-    feedback: score > 12 ? guidanceText[section.section].low : guidanceText[section.section].high,
-    sliderPosition: scaledScore.toFixed(1),
-    sliderPercent: sliderPercent // This is the value used for the arrow positioning
-  };
-});
-
+  // Results Page with Chakra UI Layout
   if (submitted) {
     return (
-      <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
-        <h2>Assessment Results</h2>
-        <p><strong>Total Score:</strong> {totalScore}</p>
-        <p><strong>Overall Maturity Level:</strong> {maturity}</p>
-        <img src={overallTachometer} alt="Overall Score Tachometer" style={{ width: "100%", maxWidth: 500 }} />
-        <hr />
-        <h3>Section Feedback:</h3>
-     {sectionScores.map((s, idx) => (
-   <div key={idx} style={{ marginBottom: 30 }}>
-     <h4>{s.section}</h4>
-     <p><strong>Score:</strong> {s.score} / 30</p>
-     <img src={new URL("./maturity-slider.png", import.meta.url).href} alt="Maturity Slider" style={{ width: "100%", maxWidth: 400 }} />
-     <div
-       style={{
-         position: "relative", // Changed from "absolute" for better positioning within its parent
-         width: "100%",
-         height: "20px" // Added a height to contain the absolute positioned arrow
-       }}
-     >
-       <div
-         style={{
-           position: "absolute",
-           top: "-75px",
-           left: `calc(${s.sliderPercent}% - 10px)`, // Assuming s.sliderPercent is defined elsewhere
-           width: 0,
-           height: 0,
-           borderLeft: "10px solid transparent",
-           borderRight: "10px solid transparent",
-           borderTop: "10px solid black"
-         }}
-       />
-     </div> {/* This div was prematurely closed */}
-     <p>{s.feedback}</p>
-   </div>
- ))}  
-        <div style={{ marginTop: 40, fontSize: "1.2em" }}>
-          <p>
-            I hope the <strong>SRx Consulting Supply Chain assessment</strong> provided valuable insights into your current operations. This tool is designed to help you reflect on key performance drivers while identifying specific opportunities that could significantly impact your bottom line.
-          </p>
-          <p>
-            If any of the findings resonated with you or if you'd like to explore potential solutions in greater detail, I'd welcome the opportunity to discuss your results further. Please feel free to schedule a follow-up conversation at your convenience.
-          </p>
-          <p>
-            🔗 <a href="https://www.SRxConsultingllc.com" target="_blank" rel="noopener noreferrer">Visit my website</a><br />
-            📅 <a href="https://tidycal.com/ttsouchlos/30-minute-meeting" target="_blank" rel="noopener noreferrer">Schedule a 30-minute meeting</a>
-          </p>
-        </div>
-      </div>
+      <Container maxW="7xl" py={8}>
+        <VStack spacing={12} align="stretch">
+          
+          {/* Top Section - Overall Assessment Results */}
+          <Box bg="white" p={8} borderRadius="lg" shadow="md" textAlign="center">
+            <Heading size="xl" color="brand.charcoal" mb={6}>
+              Assessment Results
+            </Heading>
+            <VStack spacing={4}>
+              <HStack spacing={8} justify="center" align="center">
+                <VStack spacing={2}>
+                  <Text fontSize="lg" fontWeight="semibold" color="brand.steel">
+                    Total Score:
+                  </Text>
+                  <Text fontSize="3xl" fontWeight="bold" color="brand.brick">
+                    {totalScore}
+                  </Text>
+                </VStack>
+                <VStack spacing={2}>
+                  <Text fontSize="lg" fontWeight="semibold" color="brand.steel">
+                    Overall Maturity Level:
+                  </Text>
+                  <Text fontSize="lg" fontWeight="bold" color="brand.charcoal" textAlign="center">
+                    {maturity}
+                  </Text>
+                </VStack>
+              </HStack>
+              <Box mt={6}>
+                <img 
+                  src={overallTachometer} 
+                  alt="Overall Score Tachometer" 
+                  style={{ width: "100%", maxWidth: "500px", height: "auto" }} 
+                />
+              </Box>
+            </VStack>
+          </Box>
+
+          {/* Middle Section - Section Scores in 2-Column Grid */}
+          <Box>
+            <Heading size="lg" color="brand.charcoal" mb={6}>
+              Section Feedback:
+            </Heading>
+            <SimpleGrid columns={2} spacing={8}>
+              {sectionScores.map((s, idx) => (
+                <Box key={idx} bg="white" p={6} borderRadius="lg" shadow="md" border="1px" borderColor="gray.200">
+                  <VStack align="stretch" spacing={4}>
+                    <Heading size="md" color="brand.charcoal">
+                      {s.section}
+                    </Heading>
+                    
+                    <HStack justify="space-between" align="center">
+                      <Text fontWeight="semibold" color="brand.steel">
+                        Score: {s.score} / 30
+                      </Text>
+                    </HStack>
+                    
+                    <Box position="relative">
+                      <img 
+                        src={new URL("./maturity-slider.png", import.meta.url).href} 
+                        alt="Maturity Slider" 
+                        style={{ width: "100%", maxWidth: "400px" }} 
+                      />
+                      <Box
+                        position="absolute"
+                        top="+10px"
+                        left={`calc(${s.sliderPercent}% - 10px)`}
+                        width="0"
+                        height="0"
+                        borderLeft="10px solid transparent"
+                        borderRight="10px solid transparent"
+                        borderTop="10px solid black"
+                      />
+                    </Box>
+                    
+                    <Text fontSize="sm" color="gray.700" lineHeight="tall">
+                      {s.feedback}
+                    </Text>
+                  </VStack>
+                </Box>
+              ))}
+            </SimpleGrid>
+          </Box>
+
+	{/* Print Button Section */}
+          <Box textAlign="center" py={6}>
+            <Button
+              onClick={() => window.print()}
+              bg="brand.charcoal"
+              color="white"
+              size="lg"
+              px={8}
+              py={6}
+              fontSize="md"
+              fontWeight="semibold"
+              leftIcon={<span>🖨️</span>}
+              _hover={{ bg: '#2a2a2a' }}
+              _focus={{ boxShadow: 'outline' }}
+            >
+              Print Results to PDF
+            </Button>
+            <Text mt={2} fontSize="sm" color="gray.600">
+              Use your browser's print dialog to save as PDF
+            </Text>
+          </Box>
+
+          {/* Bottom Section - Call to Action */}
+          <Box bg="brand.steel" color="white" p={8} borderRadius="lg" textAlign="center">
+            <VStack spacing={6}>
+              <Heading size="lg" color="white" mb={4}>
+                Let's Continue the Conversation
+              </Heading>
+              
+              <VStack spacing={4} fontSize="lg" lineHeight="relaxed">
+                <Text>
+                  I hope the <strong>SRx Consulting Supply Chain assessment</strong> provided valuable insights into your current operations. This tool is designed to help you reflect on key performance drivers while identifying specific opportunities that could significantly impact your bottom line.
+                </Text>
+                <Text>
+                  If any of the findings resonated with you or if you'd like to explore potential solutions in greater detail, I'd welcome the opportunity to discuss your results further. Please feel free to schedule a follow-up conversation at your convenience.
+                </Text>
+              </VStack>
+              
+              <HStack spacing={6} mt={8}>
+                <Button 
+                  as={Link}
+                  href="https://www.SRxConsultingllc.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  bg="brand.brick"
+                  color="white"
+                  size="lg"
+                  px={8}
+                  py={6}
+                  fontSize="md"
+                  fontWeight="semibold"
+                  _hover={{ bg: '#a04332', textDecoration: 'none' }}
+                  _focus={{ boxShadow: 'outline' }}
+                >
+                  🔗 Visit My Website
+                </Button>
+                <Button 
+                  as={Link}
+                  href="https://tidycal.com/ttsouchlos/30-minute-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="outline" 
+                  borderColor="white" 
+                  color="white"
+                  size="lg"
+                  px={8}
+                  py={6}
+                  fontSize="md"
+                  fontWeight="semibold"
+                  _hover={{ bg: 'whiteAlpha.200', textDecoration: 'none' }}
+                  _focus={{ boxShadow: 'outline' }}
+                >
+                  📅 Schedule a Meeting
+                </Button>
+              </HStack>
+            </VStack>
+          </Box>
+        </VStack>
+      </Container>
     );
   }
 
+  // User Info Form with Chakra UI
   if (currentSection === -1) {
     return (
-      <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
-        <h1>Supply Chain Maturity Assessment</h1>
-        {Object.keys(userInfo).map((field, i) => (
-          <div key={i} style={{ marginBottom: 10 }}>
-            <label>
-              {field.charAt(0).toUpperCase() + field.slice(1)} <span style={{ color: "red" }}>*</span>
-            </label>
-            <input
-              name={field}
-              placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-              onChange={handleInputChange}
-              value={userInfo[field]}
-              required
-              style={{ width: "100%", padding: 8 }}
-            />
-          </div>
-        ))}
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button
-          onClick={() => {
-            if (isUserInfoComplete) {
-              setCurrentSection(0);
-            } else {
-              setError("Please complete all required information");
-            }
-          }}
-          style={{ backgroundColor: isUserInfoComplete ? "#007bff" : "#cccccc", color: "white", padding: "10px 20px", borderRadius: "20px", border: "none", cursor: isUserInfoComplete ? "pointer" : "not-allowed" }}
-        >
-          Next
-        </button>
-      </div>
+      <Container maxW="md" py={8}>
+        <VStack spacing={6} align="stretch">
+          <Heading size="xl" color="brand.charcoal" textAlign="center">
+            Supply Chain Maturity Assessment
+          </Heading>
+          
+          <Box bg="white" p={6} borderRadius="lg" shadow="md">
+            <VStack spacing={4}>
+              {Object.keys(userInfo).map((field, i) => (
+                <FormControl key={i} isRequired>
+                  <FormLabel color="brand.steel" fontWeight="semibold">
+                    {field.charAt(0).toUpperCase() + field.slice(1)}
+                  </FormLabel>
+                  <Input
+                    name={field}
+                    placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                    onChange={handleInputChange}
+                    value={userInfo[field]}
+                    borderColor="gray.300"
+                    _focus={{ borderColor: 'brand.brick', boxShadow: 'outline' }}
+                  />
+                </FormControl>
+              ))}
+              
+              {error && (
+                <Alert status="error" borderRadius="md">
+                  <AlertIcon />
+                  {error}
+                </Alert>
+              )}
+              
+              <Button
+                onClick={() => {
+                  if (isUserInfoComplete) {
+                    setCurrentSection(0);
+                  } else {
+                    setError("Please complete all required information");
+                  }
+                }}
+                bg={isUserInfoComplete ? "brand.brick" : "gray.400"}
+                color="white"
+                size="lg"
+                width="full"
+                mt={4}
+                _hover={{ bg: isUserInfoComplete ? '#a04332' : 'gray.400' }}
+                cursor={isUserInfoComplete ? "pointer" : "not-allowed"}
+                isDisabled={!isUserInfoComplete}
+              >
+                Next
+              </Button>
+            </VStack>
+          </Box>
+        </VStack>
+      </Container>
     );
   }
 
+  // Questions/Assessment Form (keeping original styling for now)
   return (
     <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
       <div style={{ marginBottom: 20 }}>
