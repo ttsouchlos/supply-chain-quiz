@@ -14,8 +14,13 @@ import {
   FormControl,
   FormLabel,
   Alert,
-  AlertIcon
+  AlertIcon,
+  List,
+  ListItem,
+  ListIcon,
+  Badge
 } from '@chakra-ui/react';
+import { CheckCircleIcon, WarningIcon } from '@chakra-ui/icons';
 
 const questions = [
   {
@@ -77,24 +82,131 @@ const questions = [
 
 const guidanceText = {
   "Supply Chain Design": {
-    low: "Organizations that lack an intentional supply chain design built with cross-functional buy-in face significant cost disadvantages. This challenge is becoming increasingly critical, as 52% of engineers now spend 6 or more hours on supply chain-related work per week, representing lost resources for innovation and product improvement.  Poor supply change design limits agility during market disruptions and increases vulnerability to tariff impacts and regulatory changes. These challenges can compound over time, making it increasingly difficult to compete on cost and service while exposing the business to supply chain disruptions. A cross-functional Supply Chain design review should highlight areas of misalignment.",
-    high: "Congratulations on your strong results in this area!  Organizations with mature supply chain design achieve superior cost structures through optimized network configurations, reduced transportation expenses, and strategic inventory positioning. This foundation enables rapid response to market opportunities, efficient scaling during growth periods, and effective risk mitigation during disruptions.  Maintaining this maturity level requires continuous alignment with your evolving business strategy and market dynamics to preserve competitive advantage."
+    low: {
+      title: "Supply Chain Strategy and Design",
+      whyItMatters: "52% of engineers now spend 6+ hours weekly on supply chain work—that's lost innovation time.",
+      situation: [
+        "Lack intentional, cross-functional supply chain design",
+        "Face significant cost disadvantages vs. competitors",
+        "Vulnerable to tariff impacts and market disruptions"
+      ],
+      bottomLine: "Poor design compounds over time, making you less competitive on cost and service.",
+      nextSteps: "Conduct a cross-functional supply chain design review to identify misalignment areas."
+    },
+    high: {
+      title: "Supply Chain Strategy and Design",
+      whyItMatters: "You've built a competitive advantage through optimized supply chain design.",
+      strengths: [
+        "Superior cost structure through optimized networks",
+        "Reduced transportation expenses",
+        "Strategic inventory positioning",
+        "Rapid market response capability"
+      ],
+      nextSteps: "Continuously align with evolving business strategy to maintain your edge."
+    }
   },
   "Supplier Relationship Management": {
-    low: "Your responses to questions on Supplier Relationship Management point to significant opportunities for improved return on investment through strategic partnership development and performance optimization. The potential impact is substantial, as companies with a clear supplier management approach save up to 30% on their procurement costs. Weak supplier relationship management creates vulnerability to supply disruptions, limits access to supplier innovation and capabilities, and results in suboptimal pricing and terms.   A cross-functional supplier segmentation workshop will help to highlight where your team should focus their efforts.",
-    high: "Congratulations on having a strong Supplier Relationship Management capability in place!  Strong SRM maturity creates a foundation for innovation, scalability, and competitive advantage through strategic supplier partnerships and collaborative value creation. Mature supplier relationships provide access to cutting-edge technologies, collaborative innovation opportunities, and preferential support during market disruptions or capacity constraints. These partnerships enable faster product development cycles, improved quality outcomes, and cost advantages through joint optimization initiatives. An internal cross-functional review of the strategic supply base is critical to conduct annually, to make sure any performance or capability gaps are uncovered and addressed."
+    low: {
+      title: "Supplier Relationship Management (SRM)",
+      whyItMatters: "Companies with dedicated responsibilities for supplier management save up to 30% on material costs.",
+      risks: [
+        "Vulnerability to supply disruptions",
+        "Limited access to supplier innovation",
+        "Suboptimal pricing and terms",
+        "Missing strategic partnership opportunities"
+      ],
+      nextSteps: "Run a cross-functional supplier segmentation workshop to identify partners and assign responsibility for relationship development."
+    },
+    high: {
+      title: "Supplier Relationship Management (SRM)",
+      whyItMatters: "Strong supplier relationships are your competitive differentiator.",
+      advantages: [
+        "Access to cutting-edge technologies",
+        "Collaborative innovation opportunities",
+        "Preferential support during disruptions",
+        "Faster product development cycles",
+        "Cost advantages through joint optimization"
+      ],
+      nextSteps: "Annual alignment checks with internal stakeholders on your strategic supplier list and your development plans are critical."
+    }
   },
   "Transparency and Visibility": {
-    low: "Your feedback indicates a lack of visibility within your supply chain. This represents a critical gap, as improving supply chain visibility is the top priority for 55% of manufacturing-related businesses. Limited visibility creates reactive rather than proactive supply chain management, leading to higher costs, service failures, and customer dissatisfaction. Organizations cannot efficiently respond to disruptions, optimize inventory levels, or provide accurate customer communications without real-time data. Poor visibility also increases regulatory compliance risks and limits ability to optimize trade routes for tariff mitigation.",
-    high: "Advanced visibility enables faster response times, better alignment with real-time business events, and superior customer service through accurate information and proactive communication. This capability serves as a competitive differentiator by enabling predictive analytics, automated responses, and continuous optimization of supply chain performance. Building on this foundation to drive continuous improvement and automation initiatives will further enhance operational excellence and customer satisfaction."
+    low: {
+      title: "Supply Chain Visibility and Transparency",
+      whyItMatters: "Improving visibility is the top priority for 55% of manufacturing businesses.",
+      challenges: [
+        "Reactive vs. proactive management",
+        "Higher costs and service failures",
+        "Cannot respond efficiently to disruptions",
+        "Limited tariff mitigation effectiveness",
+        "Increased regulatory compliance risks"
+      ],
+      nextSteps: "Invest in real-time data systems to enable proactive decision-making."
+    },
+    high: {
+      title: "Supply Chain Visibility and Transparency",
+      whyItMatters: "Advanced visibility is your competitive differentiator.",
+      capabilities: [
+        "Faster response times",
+        "Better alignment with real-time events",
+        "Superior customer service",
+        "Predictive analytics and automation",
+        "Continuous performance optimization"
+      ],
+      nextSteps: "Drive continuous improvement and automation initiatives for operational excellence."
+    }
   },
   "Supply Strategy": {
-    low: "Your responses in this area indicate a more transactional purchasing approach. This approach carries significant risks, as many companies report as much as 80% of invoices from maverick spending, outside of the preferred supply base, when procurement does not lead the sourcing strategy. Transactional procurement normally results in higher total costs, limited supplier innovation access, and vulnerability to market disruptions and trade policy changes. Organizations miss opportunities for strategic partnerships, collaborative cost reduction, and risk sharing. A transactional approach also limits negotiating power and prevents effective category management. Impact mitigation activities should be prioritized.",
-    high: "You scored well in this area, congratulations!  Mature procurement and sourcing strategies optimize total cost of ownership, enhance business resilience, and create competitive advantages through strategic supplier partnerships and category expertise. This capability enables proactive market engagement, innovation access, and risk mitigation that directly supports business growth objectives.   You also gain access to supplier innovation, collaborative development opportunities, and preferential treatment that accelerates business growth.  Continue to refresh procurement strategies in response to evolving regional dynamics, regulatory changes, and business objectives to maintain your competitive advantage."
+    low: {
+      title: "Procurement and Sourcing Strategy",
+      whyItMatters: "Companies report 80% of invoices come from non-preferred suppliers when procurement doesn't lead the sourcing strategy.",
+      risks: [
+        "Higher total costs",
+        "Limited supplier innovation access",
+        "Vulnerability to market disruptions",
+        "Reduced negotiating power",
+        "Missing strategic partnerships"
+      ],
+      nextSteps: "Assign and empower category leadership for strategic spend areas. Create linkage to engineering teams for alignment."
+    },
+    high: {
+      title: "Procurement and Sourcing Strategy",
+      whyItMatters: "Your mature procurement strategy creates multiple competitive advantages.",
+      strengths: [
+        "Optimized total cost of ownership",
+        "Enhanced business resilience",
+        "Strategic supplier partnerships",
+        "Access to supplier innovation",
+        "Preferential treatment for growth"
+      ],
+      nextSteps: "Refresh strategies regularly for evolving material and service needs, global market dynamics and regulatory changes."
+    }
   },
   "Agility and Flexibility": {
-    low: "Low scores in Agility and Flexibility highlight significant vulnerability to market dynamics. This concern is widespread, as 93% of survey respondents intend to make their supply chains far more flexible, agile, and resilient. Inflexible supply chains cannot adapt quickly to market changes, resulting in lost sales opportunities, service failures, and customer dissatisfaction during disruptions. Poor agility also increases inventory risks, limits ability to optimize capacity utilization, and creates vulnerability to competitive threats from more responsive organizations. Prioritize a scenario planning process and document action plans to reduce risk and improve response capabilities.",
-    high: "Your responses reflect strong capability in this area, congratulations!  Agile supply chains provide competitive advantages through faster product launches, superior customer service during disruptions, and ability to capitalize on unexpected market opportunities.  Organizations can optimize inventory levels across demand variations, maintain service levels during supply constraints, and adapt quickly to changing customer requirements.  Take advantage of this capability through cross-functional business reviews that include your sales and marketing teams."
+    low: {
+      title: "Supply Chain Agility and Flexibility",
+      whyItMatters: "93% of companies plan to make supply chains more flexible and resilient.",
+      vulnerabilities: [
+        "Cannot adapt quickly to market changes",
+        "Lost sales opportunities during disruptions",
+        "Customer dissatisfaction and service failures",
+        "Increased slow and excess inventory risks",
+        "Competitive disadvantage vs. agile organizations"
+      ],
+      nextSteps: "Prioritize scenario planning and document action plans to improve response capabilities."
+    },
+    high: {
+      title: "Supply Chain Agility and Flexibility",
+      whyItMatters: "Your agility provides multiple competitive advantages.",
+      capabilities: [
+        "Faster product launches",
+        "Superior customer service during disruptions",
+        "Capitalize on unexpected opportunities",
+        "Optimize inventory across demand variations",
+        "Adapt quickly to changing requirements"
+      ],
+      nextSteps: "Leverage this capability to grow your business through cross-functional reviews with sales and marketing teams."
+    }
   }
 };
 
@@ -154,13 +266,14 @@ export default function SupplyChainAssessment() {
     return {
       section: section.section,
       score,
+      isHighMaturity: score <= 12,
       feedback: score > 12 ? guidanceText[section.section].low : guidanceText[section.section].high,
       sliderPosition: scaledScore.toFixed(1),
       sliderPercent: sliderPercent
     };
   });
 
-  // Results Page with Chakra UI Layout
+  // Results Page with Enhanced Chakra UI Layout
   if (submitted) {
     return (
       <Container maxW="7xl" py={8}>
@@ -208,17 +321,31 @@ export default function SupplyChainAssessment() {
             <SimpleGrid columns={2} spacing={8}>
               {sectionScores.map((s, idx) => (
                 <Box key={idx} bg="white" p={6} borderRadius="lg" shadow="md" border="1px" borderColor="gray.200">
-                  <VStack align="stretch" spacing={4}>
-                    <Heading size="md" color="brand.charcoal">
-                      {s.section}
-                    </Heading>
+                  <VStack align="stretch" spacing={5}>
                     
+                    {/* Section Header with Badge */}
+                    <HStack justify="space-between" align="center">
+                      <Heading size="md" color="brand.charcoal">
+                        {s.feedback.title}
+                      </Heading>
+                      <Badge 
+                        colorScheme={s.isHighMaturity ? "green" : "orange"}
+                        fontSize="xs"
+                        px={2}
+                        py={1}
+                      >
+                        {s.isHighMaturity ? "HIGH MATURITY" : "LOW MATURITY"}
+                      </Badge>
+                    </HStack>
+                    
+                    {/* Score Display */}
                     <HStack justify="space-between" align="center">
                       <Text fontWeight="semibold" color="brand.steel">
                         Score: {s.score} / 30
                       </Text>
                     </HStack>
                     
+                    {/* Custom Slider Image with Arrow */}
                     <Box position="relative">
                       <img 
                         src={new URL("./maturity-slider.png", import.meta.url).href} 
@@ -237,16 +364,165 @@ export default function SupplyChainAssessment() {
                       />
                     </Box>
                     
-                    <Text fontSize="sm" color="gray.700" lineHeight="tall">
-                      {s.feedback}
-                    </Text>
+                    {/* Why It Matters */}
+                    <Box>
+                      <Text fontWeight="bold" color="brand.charcoal" mb={2}>
+                        Why it matters:
+                      </Text>
+                      <Text fontSize="sm" color="gray.700" fontStyle="italic">
+                        {s.feedback.whyItMatters}
+                      </Text>
+                    </Box>
+                    
+                    {/* Dynamic Content Based on Maturity Level */}
+                    {s.isHighMaturity ? (
+                      <>
+                        {/* High Maturity Content */}
+                        {s.feedback.strengths && (
+                          <Box>
+                            <Text fontWeight="bold" color="green.600" mb={2}>
+                              Your strengths:
+                            </Text>
+                            <List spacing={1}>
+                              {s.feedback.strengths.map((strength, i) => (
+                                <ListItem key={i} fontSize="sm" color="gray.700">
+                                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                                  {strength}
+                                </ListItem>
+                              ))}
+                            </List>
+                          </Box>
+                        )}
+                        
+                        {s.feedback.advantages && (
+                          <Box>
+                            <Text fontWeight="bold" color="green.600" mb={2}>
+                              Your advantages:
+                            </Text>
+                            <List spacing={1}>
+                              {s.feedback.advantages.map((advantage, i) => (
+                                <ListItem key={i} fontSize="sm" color="gray.700">
+                                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                                  {advantage}
+                                </ListItem>
+                              ))}
+                            </List>
+                          </Box>
+                        )}
+                        
+                        {s.feedback.capabilities && (
+                          <Box>
+                            <Text fontWeight="bold" color="green.600" mb={2}>
+                              Your capabilities:
+                            </Text>
+                            <List spacing={1}>
+                              {s.feedback.capabilities.map((capability, i) => (
+                                <ListItem key={i} fontSize="sm" color="gray.700">
+                                  <ListIcon as={CheckCircleIcon} color="green.500" />
+                                  {capability}
+                                </ListItem>
+                              ))}
+                            </List>
+                          </Box>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {/* Low Maturity Content */}
+                        {s.feedback.situation && (
+                          <Box>
+                            <Text fontWeight="bold" color="orange.600" mb={2}>
+                              Your situation:
+                            </Text>
+                            <List spacing={1}>
+                              {s.feedback.situation.map((item, i) => (
+                                <ListItem key={i} fontSize="sm" color="gray.700">
+                                  <ListIcon as={WarningIcon} color="orange.500" />
+                                  {item}
+                                </ListItem>
+                              ))}
+                            </List>
+                          </Box>
+                        )}
+                        
+                        {s.feedback.risks && (
+                          <Box>
+                            <Text fontWeight="bold" color="orange.600" mb={2}>
+                              Your risks:
+                            </Text>
+                            <List spacing={1}>
+                              {s.feedback.risks.map((risk, i) => (
+                                <ListItem key={i} fontSize="sm" color="gray.700">
+                                  <ListIcon as={WarningIcon} color="orange.500" />
+                                  {risk}
+                                </ListItem>
+                              ))}
+                            </List>
+                          </Box>
+                        )}
+                        
+                        {s.feedback.challenges && (
+                          <Box>
+                            <Text fontWeight="bold" color="orange.600" mb={2}>
+                              Your challenges:
+                            </Text>
+                            <List spacing={1}>
+                              {s.feedback.challenges.map((challenge, i) => (
+                                <ListItem key={i} fontSize="sm" color="gray.700">
+                                  <ListIcon as={WarningIcon} color="orange.500" />
+                                  {challenge}
+                                </ListItem>
+                              ))}
+                            </List>
+                          </Box>
+                        )}
+                        
+                        {s.feedback.vulnerabilities && (
+                          <Box>
+                            <Text fontWeight="bold" color="orange.600" mb={2}>
+                              Your vulnerabilities:
+                            </Text>
+                            <List spacing={1}>
+                              {s.feedback.vulnerabilities.map((vulnerability, i) => (
+                                <ListItem key={i} fontSize="sm" color="gray.700">
+                                  <ListIcon as={WarningIcon} color="orange.500" />
+                                  {vulnerability}
+                                </ListItem>
+                              ))}
+                            </List>
+                          </Box>
+                        )}
+                        
+                        {s.feedback.bottomLine && (
+                          <Box>
+                            <Text fontWeight="bold" color="red.600" mb={2}>
+                              The bottom line:
+                            </Text>
+                            <Text fontSize="sm" color="gray.700" fontWeight="medium">
+                              {s.feedback.bottomLine}
+                            </Text>
+                          </Box>
+                        )}
+                      </>
+                    )}
+                    
+                    {/* What's Next */}
+                    <Box bg="blue.50" p={4} borderRadius="md" borderLeft="4px solid" borderLeftColor="blue.400">
+                      <Text fontWeight="bold" color="blue.700" mb={2}>
+                        What's next:
+                      </Text>
+                      <Text fontSize="sm" color="blue.800">
+                        {s.feedback.nextSteps}
+                      </Text>
+                    </Box>
+                    
                   </VStack>
                 </Box>
               ))}
             </SimpleGrid>
           </Box>
 
-	{/* Print Button Section */}
+          {/* Print Button Section */}
           <Box textAlign="center" py={6}>
             <Button
               onClick={() => window.print()}
@@ -331,115 +607,240 @@ export default function SupplyChainAssessment() {
   // User Info Form with Chakra UI
   if (currentSection === -1) {
     return (
-      <Container maxW="md" py={8}>
-        <VStack spacing={6} align="stretch">
-          <Heading size="xl" color="brand.charcoal" textAlign="center">
-            Supply Chain Maturity Assessment
-          </Heading>
-          
-          <Box bg="white" p={6} borderRadius="lg" shadow="md">
-            <VStack spacing={4}>
-              {Object.keys(userInfo).map((field, i) => (
-                <FormControl key={i} isRequired>
-                  <FormLabel color="brand.steel" fontWeight="semibold">
-                    {field.charAt(0).toUpperCase() + field.slice(1)}
-                  </FormLabel>
-                  <Input
-                    name={field}
-                    placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-                    onChange={handleInputChange}
-                    value={userInfo[field]}
-                    borderColor="gray.300"
-                    _focus={{ borderColor: 'brand.brick', boxShadow: 'outline' }}
-                  />
-                </FormControl>
-              ))}
-              
-              {error && (
-                <Alert status="error" borderRadius="md">
-                  <AlertIcon />
-                  {error}
-                </Alert>
-              )}
-              
-              <Button
-                onClick={() => {
-                  if (isUserInfoComplete) {
-                    setCurrentSection(0);
-                  } else {
-                    setError("Please complete all required information");
-                  }
-                }}
-                bg={isUserInfoComplete ? "brand.brick" : "gray.400"}
-                color="white"
-                size="lg"
-                width="full"
-                mt={4}
-                _hover={{ bg: isUserInfoComplete ? '#a04332' : 'gray.400' }}
-                cursor={isUserInfoComplete ? "pointer" : "not-allowed"}
-                isDisabled={!isUserInfoComplete}
-              >
-                Next
-              </Button>
-            </VStack>
+      <>
+        {/* Full-width Intro Section */}
+        <Box width="100%" display="flex" justifyContent="center" py={4}>
+          <Box
+            maxW="4xl"
+            px={8}
+            py={6}
+            bg="gray.50"
+            borderLeft="6px solid #a04332"
+            borderRadius="md"
+            shadow="sm"
+          >
+            <Text fontSize="md" color="gray.700" lineHeight="tall" textAlign="justify">
+              <strong>Why it matters:</strong> Supply chain management maximizes value across your entire network—from supplier to consumer.<br /><br />
+
+<strong>What We're Measuring</strong><br /><br />
+
+This assessment evaluates <strong>5 foundational areas</strong> that build responsive, cost-effective, and resilient supply networks:<br /><br />
+
+• <strong>Supply chain strategy and design</strong><br />
+• <strong>Sourcing and procurement</strong><br />
+• <strong>Inventory and production planning</strong><br />
+• <strong>Logistics</strong><br />
+• <strong>Warehousing</strong><br /><br />
+
+<strong>What's Not Included</strong><br /><br />
+
+We exclude operational production and customer service—these vary too much by industry for meaningful comparison.<br /><br />
+
+<strong>The bottom line:</strong> The following questions will help you identify your maturity level and improvement opportunities across these core supply chain functions.
+            </Text>
           </Box>
-        </VStack>
-      </Container>
+        </Box>
+
+        {/* Form Container */}
+        <Container maxW="md" py={8}>
+          <VStack spacing={6} align="stretch">
+            <Heading size="xl" color="brand.charcoal" textAlign="center">
+              Supply Chain Maturity Assessment
+            </Heading>
+
+            <Box bg="white" p={6} borderRadius="lg" shadow="md">
+              <VStack spacing={4}>
+                {Object.keys(userInfo).map((field, i) => (
+                  <FormControl key={i} isRequired>
+                    <FormLabel color="brand.steel" fontWeight="semibold">
+                      {field.charAt(0).toUpperCase() + field.slice(1)}
+                    </FormLabel>
+                    <Input
+                      name={field}
+                      placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                      onChange={handleInputChange}
+                      value={userInfo[field]}
+                      borderColor="gray.300"
+                      _focus={{ borderColor: 'brand.brick', boxShadow: 'outline' }}
+                    />
+                  </FormControl>
+                ))}
+
+                {error && (
+                  <Alert status="error" borderRadius="md">
+                    <AlertIcon />
+                    {error}
+                  </Alert>
+                )}
+
+                <Button
+                  onClick={() => {
+                    if (isUserInfoComplete) {
+                      setCurrentSection(0);
+                    } else {
+                      setError("Please complete all required information");
+                    }
+                  }}
+                  bg={isUserInfoComplete ? "brand.brick" : "gray.400"}
+                  color="white"
+                  size="lg"
+                  width="full"
+                  mt={4}
+                  _hover={{ bg: isUserInfoComplete ? '#a04332' : 'gray.400' }}
+                  cursor={isUserInfoComplete ? "pointer" : "not-allowed"}
+                  isDisabled={!isUserInfoComplete}
+                >
+                  Next
+                </Button>
+              </VStack>
+            </Box>
+          </VStack>
+        </Container>
+      </>
     );
   }
 
-  // Questions/Assessment Form (keeping original styling for now)
+  // Questions/Assessment Form with Enhanced Chakra UI
   return (
-    <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
-      <div style={{ marginBottom: 20 }}>
-        <p><strong>Instructions:</strong> For each statement below, please move the slider to indicate your level of agreement:</p>
-        <ul>
-          <li>1 = Strongly Agree</li>
-          <li>2 = Somewhat Agree</li>
-          <li>3 = Neutral</li>
-          <li>4 = Somewhat Disagree</li>
-          <li>5 = Strongly Disagree</li>
-        </ul>
-      </div>
-      <h2>{questions[currentSection].section}</h2>
-      {questions[currentSection].items.map((item, iIdx) => (
-        <div key={iIdx} style={{ marginBottom: 20 }}>
-          <label>{item}</label><br />
-          <input
-            type="range"
-            min="1"
-            max="5"
-            value={responses[currentSection * 6 + iIdx]}
-            onChange={(e) => handleSliderChange(currentSection * 6 + iIdx, e.target.value)}
-          />
-          <span> {responses[currentSection * 6 + iIdx]}</span>
-        </div>
-      ))}
-      <div style={{ display: "flex", justifyContent: "space-between", marginTop: 20 }}>
-        {currentSection > 0 && (
-          <button
-            onClick={() => setCurrentSection(currentSection - 1)}
-            style={{ backgroundColor: "#6c757d", color: "white", padding: "10px 20px", borderRadius: "20px", border: "none", cursor: "pointer" }}
-          >
-            Back
-          </button>
-        )}
-        {currentSection < questions.length - 1 ? (
-          <button
-            onClick={() => setCurrentSection(currentSection + 1)}
-            style={{ backgroundColor: "#007bff", color: "white", padding: "10px 20px", borderRadius: "20px", border: "none", cursor: "pointer" }}
-          >
-            Next
-          </button>
-        ) : (
-          <button
-            onClick={handleSubmit}
-            style={{ backgroundColor: "#007bff", color: "white", padding: "10px 20px", borderRadius: "20px", border: "none", cursor: "pointer" }}
-          >
-            Submit Assessment
-          </button>
-        )}
-      </div>
-    </div>
+    <Container maxW="4xl" py={8}>
+      <VStack spacing={8} align="stretch">
+        
+        {/* Instructions */}
+        <Box bg="blue.50" p={6} borderRadius="lg" border="1px" borderColor="blue.200">
+          <Heading size="md" color="brand.charcoal" mb={4}>
+            Instructions
+          </Heading>
+          <Text mb={4} color="gray.700">
+            For each statement below, please move the slider to indicate your level of agreement:
+          </Text>
+          <List spacing={2}>
+            <ListItem color="gray.700">
+              <ListIcon as={CheckCircleIcon} color="green.500" />
+              <strong>1 = Strongly Agree</strong>
+            </ListItem>
+            <ListItem color="gray.700">
+              <ListIcon as={CheckCircleIcon} color="green.400" />
+              <strong>2 = Somewhat Agree</strong>
+            </ListItem>
+            <ListItem color="gray.700">
+              <ListIcon as={CheckCircleIcon} color="yellow.500" />
+              <strong>3 = Neutral</strong>
+            </ListItem>
+            <ListItem color="gray.700">
+              <ListIcon as={WarningIcon} color="orange.400" />
+              <strong>4 = Somewhat Disagree</strong>
+            </ListItem>
+            <ListItem color="gray.700">
+              <ListIcon as={WarningIcon} color="red.500" />
+              <strong>5 = Strongly Disagree</strong>
+            </ListItem>
+          </List>
+        </Box>
+
+        {/* Section Title */}
+        <Box textAlign="center">
+          <Badge colorScheme="blue" fontSize="sm" px={4} py={2} mb={4}>
+            Section {currentSection + 1} of {questions.length}
+          </Badge>
+          <Heading size="lg" color="brand.charcoal">
+            {questions[currentSection].section}
+          </Heading>
+        </Box>
+
+        {/* Questions */}
+        <VStack spacing={6}>
+          {questions[currentSection].items.map((item, iIdx) => (
+            <Box key={iIdx} bg="white" p={6} borderRadius="lg" shadow="sm" border="1px" borderColor="gray.200" w="full">
+              <VStack spacing={4} align="stretch">
+                <Text fontSize="md" color="gray.700" lineHeight="tall">
+                  {item}
+                </Text>
+                <HStack spacing={4} align="center">
+                  <Text fontSize="sm" color="green.600" fontWeight="semibold">
+                    Strongly Agree
+                  </Text>
+                  <Box flex="1">
+                    <input
+                      type="range"
+                      min="1"
+                      max="5"
+                      value={responses[currentSection * 6 + iIdx]}
+                      onChange={(e) => handleSliderChange(currentSection * 6 + iIdx, e.target.value)}
+                      style={{
+                        width: "100%",
+                        height: "8px",
+                        background: "#e2e8f0",
+                        borderRadius: "4px",
+                        outline: "none",
+                        cursor: "pointer"
+                      }}
+                    />
+                  </Box>
+                  <Text fontSize="sm" color="red.600" fontWeight="semibold">
+                    Strongly Disagree
+                  </Text>
+                  <Badge 
+                    colorScheme={
+                      responses[currentSection * 6 + iIdx] <= 2 ? "green" :
+                      responses[currentSection * 6 + iIdx] === 3 ? "yellow" : "red"
+                    }
+                    fontSize="md"
+                    px={3}
+                    py={1}
+                  >
+                    {responses[currentSection * 6 + iIdx]}
+                  </Badge>
+                </HStack>
+              </VStack>
+            </Box>
+          ))}
+        </VStack>
+
+        {/* Navigation Buttons */}
+        <HStack justify="space-between" pt={6}>
+          {currentSection > 0 ? (
+            <Button
+              onClick={() => setCurrentSection(currentSection - 1)}
+              bg="gray.500"
+              color="white"
+              size="lg"
+              px={8}
+              leftIcon={<span>←</span>}
+              _hover={{ bg: 'gray.600' }}
+            >
+              Back
+            </Button>
+          ) : (
+            <Box /> // Empty box for spacing
+          )}
+          
+          {currentSection < questions.length - 1 ? (
+            <Button
+              onClick={() => setCurrentSection(currentSection + 1)}
+              bg="brand.brick"
+              color="white"
+              size="lg"
+              px={8}
+              rightIcon={<span>→</span>}
+              _hover={{ bg: '#a04332' }}
+            >
+              Next
+            </Button>
+          ) : (
+            <Button
+              onClick={handleSubmit}
+              bg="green.600"
+              color="white"
+              size="lg"
+              px={8}
+              rightIcon={<span>✓</span>}
+              _hover={{ bg: 'green.700' }}
+            >
+              Submit Assessment
+            </Button>
+          )}
+        </HStack>
+      </VStack>
+    </Container>
   );
 }

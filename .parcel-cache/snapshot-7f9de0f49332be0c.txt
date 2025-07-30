@@ -1,4 +1,4 @@
-3621
+3609
 101C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\ordered-binary\assets133958686591899317 1
 121C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\_\_object_without_properties133958686595089312 1
 89C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\picomatch133958686591769310 1
@@ -24,7 +24,7 @@
 110C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\cache\lib\LMDBCache.js133958686591749317 0
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\workers\src\cpuCount.js133958686592039310 0
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\AX.js133958686592749307 0
-71C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist133963817728088852 1
+71C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist133963828815707965 1
 109C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\regenerator-runtime\README.md133958686591299319 0
 133C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\_\_interop_require_wildcard\package.json133958686594919320 0
 117C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\runtime-rsc\lib\RSCRuntime.js133958686590919311 0
@@ -33,9 +33,6 @@
 99C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\dotenv\package.json133958686591459314 0
 96C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\has-flag\license133958686591109314 0
 104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\to-regex-range\README.md133958686591139312 0
-118C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\transformer-image\package.json133958686591629308 0
-132C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\utils\test\input\sourcemap\referenced-min.js133958686592929308 0
-96C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\public\overall-tachometer.png133952612910000000 0
 132C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\page-transition-events.js133958686596989315 0
 123C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\_\_check_private_redeclaration133958686594339313 1
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\ET.js133958686595219311 0
@@ -62,7 +59,7 @@
 150C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\msgpackr-extract\node_modules\node-gyp-build-optional-packages\LICENSE133958686590729337 0
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\GP.js133958686595659311 0
 109C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\react\cjs\react.production.js133958686592269307 0
-73C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\public133952619514560803 1
+73C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\public133963827558346223 1
 112C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\postcss-value-parser\lib\unit.js133958686591319322 0
 70C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\src133963760168516681 1
 134C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\react\cjs\react-jsx-runtime.react-server.production.js133958686592159330 0
@@ -103,9 +100,8 @@
 94C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\src\overall-tachometer4.png133955479596762271 0
 130C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\esm\_class_private_field_loose_key.js133958686593489312 0
 98C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\react-dom\index.js133958686591139312 0
-101C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\supply-chain-quiz.ad93b51f.js133963810594811345 0
-85C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\chalk133958686591509321 1
 100C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\postcss-value-parser133958686591579311 1
+85C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\chalk133958686591509321 1
 131C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mdb_dump.1133958686592329313 0
 129C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\css-conic-gradients.js133958686593839310 0
 115C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\http2.js133958686595839311 0
@@ -114,15 +110,6 @@
 95C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\src\SupplyChainAssessment.js133963810592440331 0
 113C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\es6.js133958686595209314 0
 121C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\font-smooth.js133958686595419308 0
-105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\commander\lib\argument.js133958686590899308 0
-107C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\package-manager\src133958686592419309 1
-115C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\asmjs.js133958686592539314 0
-152C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\msgpackr-extract\node_modules\.bin\node-gyp-build-optional-packages-test133958686598369312 0
-111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\LT.js133958686596519310 0
-121C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\optimizer-swc\src\SwcOptimizer.js133958686591069313 0
-93C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\public\maturity-slider.png133946825830000000 0
-103C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\semver\classes\index.js133958686592109309 0
-122C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\wasm-threads.js133958686598099311 0
 112C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\node-gyp-build-optional-packages133958686591449310 1
 99C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\type-fest\base.d.ts133958686591459314 0
 84C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\.bin133958686598369312 1
@@ -807,6 +794,12 @@
 115C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\lmdb\dependencies\lz4\lib\lz4file.h133958686593519314 0
 108C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\semver\classes\comparator.js133958686591429327 0
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\FJ.js133958686595329321 0
+105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\commander\lib\argument.js133958686590899308 0
+107C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\package-manager\src133958686592419309 1
+115C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\asmjs.js133958686592539314 0
+152C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\msgpackr-extract\node_modules\.bin\node-gyp-build-optional-packages-test133958686598369312 0
+103C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\semver\classes\index.js133958686592109309 0
+122C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\wasm-threads.js133958686598099311 0
 121C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\eventsource.js133958686595219311 0
 103C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\semver\classes\range.js133958686592519321 0
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\RE.js133958686597219308 0
@@ -884,7 +877,7 @@
 126C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\transformer-react-refresh-wrap\LICENSE133958686590689310 0
 130C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\js-regexp-lookbehind.js133958686596219314 0
 104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\react-refresh\runtime.js133958686591569317 0
-105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\supply-chain-quiz.9d564169.js.map133963817728078812 0
+105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\supply-chain-quiz.9d564169.js.map133963828763010437 0
 99C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\color-name\index.js133958686590809311 0
 132C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\react-dom\cjs\react-dom-server.browser.production.js133958686593169313 0
 99C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\react-dom\client.js133958686590859312 0
@@ -1301,7 +1294,7 @@
 124C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\_\_define_enumerable_properties133958686594749311 1
 98C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\utils\test133958686593109310 1
 92C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\lmdb\open.js133958686593759311 0
-104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer4.16fe6f5d.png133963817727698710 0
+104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer4.16fe6f5d.png133963828762700459 0
 92C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\lmdb\read.js133958686593799309 0
 119C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\indexeddb.js133958686595979308 0
 94C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\lmdb\README.md133958686593899311 0
@@ -1529,8 +1522,8 @@
 129C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest5.c133958686593129309 0
 104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\reporter-cli\src133958686591979316 1
 106C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\color-convert\package.json133958686590646310 0
-110C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\src\_defaults.mjs133958686595669311 0
 132C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest_enc.c133958686592969309 0
+110C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\src\_defaults.mjs133958686595669311 0
 105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\reporter-cli\test133958686591759315 1
 133C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest_enc2.c133958686592989309 0
 120C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\node-resolver-core\lib\_empty.js133958686590859312 0
@@ -1644,8 +1637,8 @@
 104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\escalade\sync\index.d.ts133958686591789310 0
 102C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\escalade\sync\index.js133958686591039315 0
 123C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\electron-to-chromium\chromium-versions.json133958686591609315 0
-111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\IL.js133958686595899314 0
 119C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\electron-to-chromium\full-versions.json133958686591809312 0
+111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\IL.js133958686595899314 0
 109C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\electron-to-chromium\index.js133958686591439315 0
 108C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\electron-to-chromium\LICENSE133958686590739311 0
 124C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\css-cross-fade.js133958686593909309 0
@@ -1851,6 +1844,7 @@
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\LI.js133958686596439313 0
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\LK.js133958686596499303 0
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\LR.js133958686596509307 0
+111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\LT.js133958686596519310 0
 112C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\transformer-posthtml\src133958686591289313 1
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\regions\LU.js133958686596529318 0
 99C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\_\_jsx133958686594999313 1
@@ -2204,7 +2198,7 @@
 119C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\dommatrix.js133958686595089312 0
 127C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\wasm-multi-memory.js133958686598069310 0
 118C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\download.js133958686595089312 0
-101C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\supply-chain-quiz.9d564169.js133963817728038822 0
+101C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\supply-chain-quiz.9d564169.js133963828762980465 0
 116C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\optimizer-image\package.json133958686591029325 0
 130C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\transformer-react-refresh-wrap\src\helpers133958686591569317 1
 119C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\dragndrop.js133958686595099313 0
@@ -2275,7 +2269,6 @@
 116C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\error-overlay\src\components133958686592149308 1
 130C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\input-file-directory.js133958686596049311 0
 123C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\notifications.js133958686596849311 0
-103C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer.cfc0386c.png133953770226564736 0
 129C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\caniuse-lite\data\features\input-file-multiple.js133958686596059310 0
 121C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\src\_object_spread_props.mjs133958686595859309 0
 134C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\_\_class_private_method_init\package.json133958686594589317 0
@@ -2560,7 +2553,6 @@
 121C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\_\_skip_first_generator_next133958686595129311 1
 115C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\core\test\fixtures\main-mjs133958686594559317 1
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\_\_sliced_to_array133958686595149310 1
-100C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\maturity-slider.ee934a48.png133963804344731811 0
 122C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\types-internal\lib\FileSystem.d.ts133958686592179320 0
 119C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\_\_tagged_template_literal133958686595169316 1
 125C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\_\_tagged_template_literal_loose133958686595159313 1
@@ -2884,7 +2876,6 @@
 128C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\cjs\_ts_add_disposable_resource.cjs133958686593139314 0
 122C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\cjs\_ts_dispose_resources.cjs133958686593149312 0
 109C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\cjs\_type_of.cjs133958686593189309 0
-105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\supply-chain-quiz.ad93b51f.js.map133963810594971630 0
 115C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\runtime-rsc\rsc-helpers.jsx133958686591389311 0
 107C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@swc\helpers\cjs\_using.cjs133958686593219310 0
 120C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\core\lib\requests\PathRequest.js133958686593689319 0
@@ -3036,6 +3027,8 @@
 116C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\utils\test\sourcemap.test.js133958686593029313 0
 115C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\utils\test\throttle.test.js133958686593089311 0
 124C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\utils\test\input\sourcemap\inline.js133958686592749307 0
+118C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\transformer-image\package.json133958686591629308 0
+132C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\utils\test\input\sourcemap\referenced-min.js133958686592929308 0
 136C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\utils\test\input\sourcemap\referenced-min.js.map133958686593349304 0
 122C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\utils\test\input\config\config.cjs133958686591109314 0
 122C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\utils\test\input\config\empty.toml133958686593359302 0
@@ -3231,7 +3224,7 @@
 125C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\runtime-browser-hmr\src\HMRRuntime.js133958686591559310 0
 141C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\core\test\fixtures\invalid-target-source-not-file\src133958686593179310 1
 119C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\runtime-browser-hmr\src\loaders133958686591609315 1
-104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer2.23198277.png133963817726659326 0
+104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer2.23198277.png133963828761857793 0
 134C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\runtime-browser-hmr\src\loaders\.eslintrc.json133958686591639311 0
 105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@lezer\lr\dist\index.d.ts133958686591819309 0
 125C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\runtime-browser-hmr\lib\HMRRuntime.js133958686591389311 0
@@ -3338,6 +3331,7 @@
 120C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\package-manager\lib\index.js.map133958686592669314 0
 109C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\optimizer-swc\LICENSE133958686590709320 0
 105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\optimizer-swc\src133958686591029325 1
+121C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\optimizer-swc\src\SwcOptimizer.js133958686591069313 0
 142C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\core\test\fixtures\custom-format-mismatch\package.json133958686594379321 0
 105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\optimizer-svg\lib133958686590849313 1
 114C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\optimizer-svg\package.json133958686591209311 0
@@ -3354,7 +3348,6 @@
 121C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\optimizer-css\lib\CSSOptimizer.js133958686590889310 0
 102C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\events\LICENSE133958686590729337 0
 121C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\node-resolver-core\lib\Wrapper.js133958686591459314 0
-104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer4.7f851b38.png133963804344731811 0
 105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\namer-default\lib133958686590849313 1
 109C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\namer-default\LICENSE133958686590719308 0
 121C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\@parcel\namer-default\src\DefaultNamer.js133958686591099314 0
@@ -3611,12 +3604,7 @@
 91C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\.bin\parcel133958686598369312 0
 91C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\.bin\semver133958686598369312 0
 111C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\node_modules\.bin\update-browserslist-db.cmd133958686598369312 0
-82C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\index.html133963817728028832 0
-100C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\maturity-slider.843d761e.png133963817727698710 0
-104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer1.19992547.png133963817726759436 0
-104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer1.47029b12.png133963804344731811 0
-104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer2.9cbfc454.png133963804344930621 0
-104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer3.66ed60af.png133963817726776877 0
-104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer3.b01898da.png133963804344731811 0
-101C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\supply-chain-quiz.31b563d9.js133951894305360997 0
-105C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\supply-chain-quiz.31b563d9.js.map133951894305413050 0
+82C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\index.html133963828762960454 0
+100C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\maturity-slider.843d761e.png133963828762700459 0
+104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer1.19992547.png133963828761847795 0
+104C:\Users\tsouc\OneDrive\Documents\SRX Consulting\supply-chain-quiz\dist\overall-tachometer3.66ed60af.png133963828761867794 0
