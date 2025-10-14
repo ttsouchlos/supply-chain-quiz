@@ -21,7 +21,6 @@ import {
   Badge
 } from '@chakra-ui/react';
 import { CheckCircleIcon, WarningIcon } from '@chakra-ui/icons';
-
 const questions = [
   {
     section: "Supply Chain Design",
@@ -603,12 +602,46 @@ export default function SupplyChainAssessment() {
       </Container>
     );
   }
-
-  // User Info Form with Chakra UI
+// User Info Form with Chakra UI
   if (currentSection === -1) {
     return (
       <>
-        {/* Full-width Intro Section */}
+        {/* White Header Section with Logo */}
+        <Box width="100%" display="flex" justifyContent="center" py={4}>
+          <Box
+            maxW="4xl"
+	    width="100%"
+            px={8}
+            py={6}
+            bg="white"
+            borderRadius="md"
+            shadow="sm"
+          >
+            {/* Logo positioned top left */}
+            <Box mb={4} display="flex" justifyContent="center">
+              <img 
+                src={new URL("./srx-logo.png", import.meta.url).href}
+                alt="SRX Consulting Logo" 
+                style={{ height: '80px', width: 'auto' }}
+              />
+            </Box>
+            
+            {/* Centered header text */}
+            <VStack spacing={1} align="center">
+              <Heading size="xl" color="brand.charcoal" textAlign="center">
+                Supply Chain Maturity Assessment
+              </Heading>
+              <Text fontSize="lg" color="gray.700" fontWeight="semibold" textAlign="center">
+                for Medium to Large Manufacturers
+              </Text>
+              <Text fontSize="sm" color="gray.600" textAlign="center">
+                (typically $25M to $1B Annual Revenue)
+              </Text>
+            </VStack>
+          </Box>
+        </Box>
+
+        {/* Gray Intro Section */}
         <Box width="100%" display="flex" justifyContent="center" py={4}>
           <Box
             maxW="4xl"
@@ -621,21 +654,15 @@ export default function SupplyChainAssessment() {
           >
             <Text fontSize="md" color="gray.700" lineHeight="tall" textAlign="justify">
               <strong>Why it matters:</strong> Supply chain management maximizes value across your entire network—from supplier to consumer.<br /><br />
-
 <strong>What We're Measuring</strong><br /><br />
-
 This assessment evaluates <strong>5 foundational areas</strong> that build responsive, cost-effective, and resilient supply networks:<br /><br />
-
 • <strong>Supply chain strategy and design</strong><br />
 • <strong>Sourcing and procurement</strong><br />
 • <strong>Inventory and production planning</strong><br />
 • <strong>Logistics</strong><br />
 • <strong>Warehousing</strong><br /><br />
-
 <strong>What's Not Included</strong><br /><br />
-
 We exclude operational production and customer service—these vary too much by industry for meaningful comparison.<br /><br />
-
 <strong>The bottom line:</strong> The following questions will help you identify your maturity level and improvement opportunities across these core supply chain functions.
             </Text>
           </Box>
@@ -644,10 +671,6 @@ We exclude operational production and customer service—these vary too much by 
         {/* Form Container */}
         <Container maxW="md" py={8}>
           <VStack spacing={6} align="stretch">
-            <Heading size="xl" color="brand.charcoal" textAlign="center">
-              Supply Chain Maturity Assessment
-            </Heading>
-
             <Box bg="white" p={6} borderRadius="lg" shadow="md">
               <VStack spacing={4}>
                 {Object.keys(userInfo).map((field, i) => (
@@ -665,14 +688,12 @@ We exclude operational production and customer service—these vary too much by 
                     />
                   </FormControl>
                 ))}
-
                 {error && (
                   <Alert status="error" borderRadius="md">
                     <AlertIcon />
                     {error}
                   </Alert>
                 )}
-
                 <Button
                   onClick={() => {
                     if (isUserInfoComplete) {
